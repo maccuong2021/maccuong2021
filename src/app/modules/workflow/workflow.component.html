@@ -1,0 +1,107 @@
+<div class="d-flex flex-column-fluid home">
+  <div class="container">
+    <div class="dms dms-viewcard">
+    <bryntum-task-board   
+        #taskboard                                                                
+    ></bryntum-task-board>
+
+    <!-- <bryntum-demo-header
+        link = "../../../../../#example-frameworks-angular-filtering"
+        title = "Angular Event Filtering demo"
+    ></bryntum-demo-header>
+      <bryntum-text-field
+          label = "Filter tasks by name"
+          clearable = true
+          keyStrokeChangeDelay = 100
+          [triggers] = "filterTriggers"
+          (onChange) = "onFindChange($event)"
+      ></bryntum-text-field>
+      <bryntum-text-field
+          label = "Highlight tasks"
+          clearable = true
+          keyStrokeChangeDelay = 100
+          [triggers] = "highlightTriggers"
+          (onChange) = "onHighlightChange($event)"
+      ></bryntum-text-field>
+
+      <bryntum-calendar
+      #calendar
+      [eventEditFeature] = "calendarConfig.features.eventEdit"
+      
+      [listeners] = "calendarConfig.listeners"
+     >
+    </bryntum-calendar>     -->
+
+    <!-- <bryntum-calendar
+        (onDataChange) = "syncData($event)"
+      [eventEditFeature] = "calendarConfig.features.eventEdit"
+      [date] = "calendarConfig.date"
+      [modes] = "calendarConfig.modes"
+      [resources] = "calendarConfig.resources"
+      [events] = "calendarConfig.events"
+      (onCatchAll) = "onCalendarEvents($event)">
+    </bryntum-calendar>     -->
+  </div>
+</div>
+
+<ng-template #contentPopup let-modal>
+  <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">
+          test
+      </h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <i class="icon-close icon-20 text-dark text-hover-primary"></i>
+      </button>
+  </div>
+  <div class="modal-body">
+      <form>
+          <div class="form-group">
+              <div class="d-flex justify-content-between">
+                  <div class="mr-2 flex-grow-1">
+                     Test 1
+                  </div>
+              </div>
+          </div>
+      </form>
+  </div>
+
+  <div class="modal-footer">
+      <button type="button" id="btnRename" class="btn btn-primary" (click)="SaveData(modal)">Save</button>
+  </div>
+</ng-template>
+
+<div class="modal fade" id="customEditor" tabindex="-1" aria-labelledby="customEditorLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          <!--...-->
+          </div>
+          <div class="modal-body">
+              <form>
+                  <div class="form-group">
+                      <label for="home">Home team</label>
+                      <select class="custom-select" id="home">
+                          ...
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="away">Away team</label>
+                      <select class="custom-select" id="away">
+                          ...
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="startDate">Date</label>
+                      <input type="date" class="form-control" id="startDate">
+                  </div>
+                  <!--...-->
+              </form>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" id="save">Save changes</button>
+          </div>
+      </div>
+  </div>
+</div>
+
